@@ -4,6 +4,9 @@ import uuid
 import sys
 import os
 import argparse
+import urllib3
+
+urllib3.disable_warnings()
 
 # arguments
 parser = argparse.ArgumentParser(description='Get & beautify remote js files')
@@ -31,7 +34,7 @@ for u in open(args.infile, 'r'):
 
     print("[+] Requesting: " + u.strip())
 
-    r = requests.get(u.strip(), headers=headers)
+    r = requests.get(u.strip(), headers=headers, verify=False)
     
     print("[+] Status code: " + str(r.status_code))
 
