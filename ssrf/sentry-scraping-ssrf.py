@@ -4,7 +4,6 @@ import argparse
 import multiprocessing as mp
 import os
 import time
-import pprint
 
 # cpus
 cpus = mp.cpu_count()
@@ -24,6 +23,7 @@ url = ""
 def sentry_check(links):
     for link in links:
         try:
+            time.sleep(5)
             url = requests.get(link)
             if url and url.status_code == 200: 
                 resp = url.text
@@ -65,7 +65,6 @@ def main():
 
     # divide big list into 5 small ones
     links = list(divide_chunks(linkList, args.threads))
-    #pprint.pprint(list(divide_chunks(linkList, args.threads)))
 
     for i in range(0, len(links)):
         p = mp.Process(target=sentry_check, args=(links[i],))
