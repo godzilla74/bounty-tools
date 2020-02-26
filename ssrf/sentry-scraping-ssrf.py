@@ -39,10 +39,6 @@ def sentry_check(links):
                         headers = {'Content-type': 'application/json', 'Origin':'https://z.tochka.com/'}
                         rsp = requests.post(url, json=datas, headers=headers)
                         print(CGREENBG + "[+]" + CEND + "({}) Sentry endpoint found!  Payload sent to {}".format(mp.current_process().name, link))
-                else:
-                    print(CRED + "[+]" + CEND + "({}) No Sentry endpoint found in {}".format(mp.current_process().name, link))
-            else:
-                print(CRED + "[!]" + CEND + "({}) Unfavorable status code {} returned: {}".format(mp.current_process().name, url.status_code, link))
         except requests.exceptions.ConnectionError:
             pass
 
