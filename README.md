@@ -3,7 +3,7 @@ Various tools I've made for bug bounty hunting
 <details>
 <summary>/js</summary>
 <ul>
-  <li>beautify-js.py: `python3 beautify-js.py --infile [file with a ton of URLS in it] --outdir [where to save the beautified results]`</li>
+  <li>beautify-js.py: python3 beautify-js.py --infile [file with a ton of URLS in it] --outdir [where to save the beautified results]</li>
 </ul>
 </details>
 
