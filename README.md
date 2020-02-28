@@ -20,3 +20,16 @@ Various tools I've made for bug bounty hunting
   <li>wayback-words.py: python3 wayback-words.py --infile [file with a ton of URLs in it] --outfile [where to save the generated list] --exclusions [extensions to exclude (ie: .png .jpg)]</li>
 </ul>
 </details>
+
+<details>
+<summary>/fuzzing</summary>
+<ul>
+  <li>
+    <b>param-replace.py:</b>
+    <ul>
+      <li>Why: Mass find/replace of all parameters in a URL with a given payload.</li>
+      <li>Uses: Open Redirect, SSRF</li>
+      <li>Syntax: <code>python3 param-replace.py --infile [file with ton of URLs in it] --outfile [where to save the results] --payload [a malicious callback link (burp collab>)]</code></li>
+    </ul>
+  </li>
+</ul>
