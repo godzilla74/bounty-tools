@@ -9,7 +9,7 @@ import time
 cpus = mp.cpu_count()
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--file', help="File of urls to check (in format http(s)://example.com)", required=True)
+parser.add_argument('--infile', help="File of urls to check (in format http(s)://example.com)", required=True)
 parser.add_argument('--payload', help='Collaborator link', type=str, required=True)
 parser.add_argument('--threads', help='Number of threads (defaults to cpu core count)', type=int, default=cpus)
 args = parser.parse_args()
