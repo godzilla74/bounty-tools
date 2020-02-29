@@ -1,7 +1,7 @@
 import requests
 import argparse
 import re
-import pprint
+from urllib.parse import urlparse
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--infile', help="File of urls to check (in format http(s)://example.com)", required=True)
@@ -9,7 +9,6 @@ parser.add_argument('--outfile', help="Where to save the results", required=True
 parser.add_argument('--payload', help="The payload to replace parameter values with", required=True)
 args = parser.parse_args()
 
-#payload = "oa2b2h1sj58mnpy5gtjvw65lhcn2br.g0dz1lla.com"
 payload = args.payload
 f = open(args.outfile, "a")
 
@@ -44,7 +43,7 @@ def send_post_request(link):
 def gen_payload_with_prefix(req_type, link):
     """ appends the request type to the given payload """
     regex = re.compile("(?<=\=)([^&\s+]*)(?=&)?")
-    link = re.sub(regex, r"{}.{}".format(req_type, payload), link.rstrip())
+    link = re.sub(regex, r"{}.{}.{}".format(req_type, urlparse(link).netloc, payload), link.rstrip())
     return link
 
 def main():
