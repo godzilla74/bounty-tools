@@ -53,5 +53,13 @@ Various tools I've made for bug bounty hunting
       <li>Syntax: <code>python3 param-replace.py --infile [file with ton of URLs in it] --outfile [where to save the results] --payload [a malicious callback link (burp collab>)]</code></li>
     </ul>
   </li>
+  <li>
+    <b>param-stuffing.py:</b>
+    <ul>
+      <li>Why: Stuff given parameters in a URL with a given payload.</li>
+      <li>Uses: Open Redirect, SSRF</li>
+      <li>Syntax: <code>python3 param-stuffing.py --infile [file with ton of URLs in it] --outfile [where to save the results] --params [url redirect u r etc]  --payload [a malicious callback link (burp collab>)]</code></li>
+    </ul>
+  </li>
 </ul>
 </details>
