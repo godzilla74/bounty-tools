@@ -61,5 +61,21 @@ Various tools I've made for bug bounty hunting
       <li>Syntax: <code>python3 param-stuffing.py --infile [file with ton of URLs in it] --outfile [where to save the results] --params [url redirect u r etc]  --payload [a malicious callback link (burp collab>)]</code></li>
     </ul>
   </li>
+  <li>
+    <b>header-check.py:</b>
+    <ul>
+      <li>Why: Stuff a payload in URL parameters and see if they are reflected in response headers.</li>
+      <li>Uses: Header tampering, XSS</li>
+      <li>Syntax: <code>python3 header-checky.py --infile [file with ton of URLs in it] --outfile [where to save the results]  --payload [a malicious callback link (burp collab>)]</code></li>
+    </ul>
+  </li>
+  <li>
+    <b>header-fuzz.py:</b>
+    <ul>
+      <li>Why: Stuff custom headers into a request to see what happens.</li>
+      <li>Uses: Header tampering, Open Redirect, SSRF</li>
+      <li>Syntax: <code>python3 header-fuzz.py --infile [file with ton of URLs in it] --outfile [where to save the results] --headers [User-Agent X-Forwarded-For etc...]  --payload [a malicious callback link (burp collab>)]</code></li>
+    </ul>
+  </li>
 </ul>
 </details>
