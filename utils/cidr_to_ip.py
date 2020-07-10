@@ -12,7 +12,7 @@ ipList = list()
 cidrList = [line.strip('\n') for line in open(args.infile, 'r')]
 
 for c in cidrList:
-  for ip in ipaddress.IPv4Network(c):
+  for ip in ipaddress.IPv4Network(c, strict=False):
     ipList.append(str(ip))
 
 f = open(args.outfile, 'a')
